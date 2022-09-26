@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomerDatabaseLookup.Src.Models
 {
-    class Customer
+    public class Customer
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
@@ -14,7 +14,14 @@ namespace CustomerDatabaseLookup.Src.Models
         public string Description { get; private set; }
         public int PhoneNumber { get; private set; }
 
-        public Customer( string firstName, string lastName, string description, int phoneNumber )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="description"></param>
+        /// <param name="phoneNumber"></param>
+        public Customer(string firstName, string lastName, string description, int phoneNumber)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -23,7 +30,13 @@ namespace CustomerDatabaseLookup.Src.Models
             PhoneNumber = phoneNumber;
         }
 
-        public Customer( string fullName, string description, int phoneNumebr )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fullName"></param>
+        /// <param name="description"></param>
+        /// <param name="phoneNumebr"></param>
+        public Customer(string fullName, string description, int phoneNumebr)
         {
             FullName = fullName;
             string[] h = fullName.Split(' ');
@@ -33,12 +46,35 @@ namespace CustomerDatabaseLookup.Src.Models
             PhoneNumber = phoneNumebr;
         }
 
-        public void ChangeFullName( string fullName )
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="fullName"></param>
+        public void ChangeFullName(string fullName)
         {
             string[] h = fullName.Split(' ');
             FirstName = h[0];
             LastName = h[1];
             FullName = fullName;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newPhoneNumber"></param>
+        public void ChangePhoneNumber( int newPhoneNumber )
+        {
+            PhoneNumber = newPhoneNumber;
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newDescription"></param>
+        public void ChangeDescription( string newDescription)
+        {
+            Description = newDescription;
         }
 
     }
