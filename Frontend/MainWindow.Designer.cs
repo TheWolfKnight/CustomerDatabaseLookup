@@ -35,7 +35,7 @@ namespace CustomerDatabaseLookup
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(343, 170);
+            this.nameLabel.Location = new System.Drawing.Point(365, 155);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(28, 17);
             this.nameLabel.TabIndex = 0;
