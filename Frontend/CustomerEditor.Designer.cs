@@ -98,7 +98,7 @@ namespace CustomerDatabaseLookup.Frontend
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(28, 339);
+            this.submitButton.Location = new System.Drawing.Point(28, 252);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(111, 74);
             this.submitButton.TabIndex = 7;
@@ -107,7 +107,7 @@ namespace CustomerDatabaseLookup.Frontend
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(228, 339);
+            this.cancelButton.Location = new System.Drawing.Point(228, 252);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(111, 74);
             this.cancelButton.TabIndex = 8;
@@ -118,7 +118,7 @@ namespace CustomerDatabaseLookup.Frontend
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(372, 450);
+            this.ClientSize = new System.Drawing.Size(372, 345);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.textBox4);
