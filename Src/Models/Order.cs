@@ -39,9 +39,9 @@ namespace CustomerDatabaseLookup.Src.Models
     /// </summary>
     public enum OrderStatus
     {
-        Anulled,
-        Processing,
-        Complete
+        Anulled = 0,
+        Processing = 1,
+        Complete = 2,
     }
 
 }

@@ -13,6 +13,30 @@ namespace CustomerDatabaseLookup.Src
     {
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="orders"></param>
+        /// <param name="amt"></param>
+        /// <returns></returns>
+        public static List<Order> GetRecentOrders( List<Order> orders, int amt=3 )
+        {
+            List<Order> result = orders.OrderBy( order => order.Orderd ).Reverse().ToList();
+            return result.GetRange(0, amt);
+
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="orders"></param>
+        /// <returns></returns>
+        public static List<Order> GetCompletedOrder( List<Order> orders )
+        {
+            List<Order> result = orders.Where(order => order.Status is OrderStatus.Complete).ToList();
+            return result;
+        }
 
     }
 }
