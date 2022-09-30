@@ -13,9 +13,11 @@ namespace CustomerDatabaseLookup.Src.Models
         public string FullName { get; private set; }
         public string Description { get; private set; }
         public int PhoneNumber { get; private set; }
+        public List<Order> OrderHistory { get; private set; }
+
 
         /// <summary>
-        /// 
+        /// Creates a new 
         /// </summary>
         /// <param name="firstName"></param>
         /// <param name="lastName"></param>
@@ -28,14 +30,16 @@ namespace CustomerDatabaseLookup.Src.Models
             FullName = $"{firstName} {lastName}";
             Description = description;
             PhoneNumber = phoneNumber;
+
         }
 
+
         /// <summary>
-        /// 
+        /// Creates a new Customer instance based off of a full name, description, and phone number
         /// </summary>
-        /// <param name="fullName"></param>
-        /// <param name="description"></param>
-        /// <param name="phoneNumebr"></param>
+        /// <param name="fullName"> The full name of the customer </param>
+        /// <param name="description"> The description for the customer </param>
+        /// <param name="phoneNumebr"> The phone number of the customer </param>
         public Customer(string fullName, string description, int phoneNumebr)
         {
             FullName = fullName;
@@ -47,9 +51,9 @@ namespace CustomerDatabaseLookup.Src.Models
         }
 
         /// <summary>
-        /// 
+        /// Sets a new full name, first name, and last name for the customer instance
         /// </summary>
-        /// <param name="fullName"></param>
+        /// <param name="fullName"> The new full name of the customer </param>
         public void ChangeFullName(string fullName)
         {
             string[] h = fullName.Split(' ');
@@ -59,9 +63,9 @@ namespace CustomerDatabaseLookup.Src.Models
         }
 
         /// <summary>
-        /// 
+        /// Sets a new phone number for the customer instance
         /// </summary>
-        /// <param name="newPhoneNumber"></param>
+        /// <param name="newPhoneNumber"> The new phone number of the customer </param>
         public void ChangePhoneNumber( int newPhoneNumber )
         {
             PhoneNumber = newPhoneNumber;
@@ -69,13 +73,23 @@ namespace CustomerDatabaseLookup.Src.Models
         }
 
         /// <summary>
-        /// 
+        /// Sets a new description for the customer instance
         /// </summary>
-        /// <param name="newDescription"></param>
+        /// <param name="newDescription"> The new description </param>
         public void ChangeDescription( string newDescription)
         {
             Description = newDescription;
         }
+        
+        /// <summary>
+        /// Adds an Order instance to the customer instance
+        /// </summary>
+        /// <param name="order"> The order that the customer has placed </param>
+        public void PlaceOrder( Order order )
+        {
+            OrderHistory.Add(order);
+        }
+
 
     }
 }
