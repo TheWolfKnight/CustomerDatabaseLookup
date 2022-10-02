@@ -7,24 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using CustomerDatabaseLookup.Src.Models;
+using CustomerDatabaseLookup.Src.WindowHandles;
 
 namespace CustomerDatabaseLookup.Frontend
 {
 
     public partial class CustomerEditor : Form
     {
-        public Customer CustomerToChange { get; set; }
 
-        public CustomerEditor(Customer toChange)    
+        private CustomerEditorHandle Handle { get; set; }
+        private Customer ToChagne { get; set; }
+
+        public CustomerEditor(Customer toChange)
         { 
             InitializeComponent();
-            CustomerToChange = toChange;
+            ToChagne = toChange;
+            Handle = new CustomerEditorHandle(this);
+
         }
 
         private void CustomerEditor_Load(object sender, EventArgs e)
         {
-
+            Handle.CustomerEditorLoad();
         }
     }
 }
