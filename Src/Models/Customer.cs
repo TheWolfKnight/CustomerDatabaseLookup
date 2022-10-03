@@ -17,12 +17,12 @@ namespace CustomerDatabaseLookup.Src.Models
 
 
         /// <summary>
-        /// Creates a new 
+        /// Creates a new customer based on a first name, last name, desctiption, and phone number
         /// </summary>
-        /// <param name="firstName"></param>
-        /// <param name="lastName"></param>
-        /// <param name="description"></param>
-        /// <param name="phoneNumber"></param>
+        /// <param name="firstName"> The first name of the customer </param>
+        /// <param name="lastName"> The last name of the customer </param>
+        /// <param name="description"> The description of the customer </param>
+        /// <param name="phoneNumber"> The phone number of the customer </param>
         public Customer(string firstName, string lastName, string description, int phoneNumber)
         {
             FirstName = firstName;
@@ -69,7 +69,6 @@ namespace CustomerDatabaseLookup.Src.Models
         public void ChangePhoneNumber( int newPhoneNumber )
         {
             PhoneNumber = newPhoneNumber;
-
         }
 
         /// <summary>
@@ -88,6 +87,15 @@ namespace CustomerDatabaseLookup.Src.Models
         public void PlaceOrder( Order order )
         {
             OrderHistory.Add(order);
+        }
+
+        /// <summary>
+        /// Get the count of orders for the customer
+        /// </summary>
+        /// <returns> Integer amt of orders in order history </returns>
+        public int OrderAmount()
+        {
+            return OrderHistory.Count;
         }
 
 
