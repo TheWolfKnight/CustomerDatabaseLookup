@@ -16,17 +16,22 @@ namespace CustomerDatabaseLookup
     public partial class MainWindow : Form
     {
 
-        private MainWindowHandle Handle { get; set; }
+        public MainWindowHandle WindowHandle { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
-            Handle = new MainWindowHandle(this);
+            WindowHandle = new MainWindowHandle(this);
         }
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            Handle.InitMainWindow();
+            WindowHandle.InitMainWindow();
+        }
+
+        private void editUserDateButton_Click(object sender, EventArgs e)
+        {
+            WindowHandle.EditUserDataButtonClickEvent();
         }
     }
 }

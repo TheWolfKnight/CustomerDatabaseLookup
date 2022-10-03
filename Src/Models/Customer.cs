@@ -30,7 +30,7 @@ namespace CustomerDatabaseLookup.Src.Models
             FullName = $"{firstName} {lastName}";
             Description = description;
             PhoneNumber = phoneNumber;
-
+            OrderHistory = new List<Order>();
         }
 
 
@@ -48,6 +48,7 @@ namespace CustomerDatabaseLookup.Src.Models
             LastName = h[1];
             Description = description;
             PhoneNumber = phoneNumebr;
+            OrderHistory = new List<Order>();
         }
 
         /// <summary>
