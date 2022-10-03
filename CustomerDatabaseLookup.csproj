@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\WindowHandles\CustomerEditorHandle.cs" />
     <Compile Include="Src\WindowHandles\MainWindowHandle.cs" />
     <Compile Include="Src\Models\Customer.cs" />
     <Compile Include="Src\Models\Order.cs" />
