@@ -52,6 +52,12 @@
     <Compile Include="Frontend\CustomerEditor.Designer.cs">
       <DependentUpon>CustomerEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frontend\LogInWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frontend\LogInWindow.Designer.cs">
+      <DependentUpon>LogInWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frontend\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     <Compile Include="Src\Services\OrderFilter.cs" />
     <EmbeddedResource Include="Frontend\CustomerEditor.resx">
       <DependentUpon>CustomerEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frontend\LogInWindow.resx">
+      <DependentUpon>LogInWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frontend\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
