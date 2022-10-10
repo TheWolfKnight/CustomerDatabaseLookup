@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using CustomerDatabaseLookup.Src.Services;
 using CustomerDatabaseLookup.Src.Models;
 using CustomerDatabaseLookup.Frontend;
 
@@ -14,6 +15,7 @@ namespace CustomerDatabaseLookup.Src.WindowHandles
 
         public CustomerEditor Owner { get; private set; }
 
+        private ErrorLoggin Log = new ErrorLoggin();
 
         public CustomerEditorHandle( CustomerEditor owner)
         {
@@ -33,6 +35,9 @@ namespace CustomerDatabaseLookup.Src.WindowHandles
             try
             {
 
+                if (Owner.phoneNumberInput.Text.Length != 8)
+                    throw new FormatException("Less than 8");
+
                 Customer customer = new Customer(
                     Owner.firstNameInput.Text,
                     Owner.lastNameInput.Text,
@@ -40,9 +45,15 @@ namespace CustomerDatabaseLookup.Src.WindowHandles
                     int.Parse(Owner.phoneNumberInput.Text)
                 );
                 Owner.Owner.WindowHandle.CustomerEditorUpdater(customer);
-            } catch ( FormatException _ )
+                Owner.Close();
+            } catch ( FormatException fe )
             {
-                throw new Exception("TBD");
+                if (fe.Message.Equals("Less than 8") && int.TryParse(Owner.phoneNumberInput.Text, out int _))
+                    Owner.lb_errorLabel.Text = "The phone number may, only contains 8 numbers";
+                else
+                    Owner.lb_errorLabel.Text = "The phone number field may only contain numbers";
+                Owner.lb_errorLabel.Visible = true;
+                Log.WriteErrorLog(fe.Message);
             }
         }
 

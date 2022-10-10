@@ -22,10 +22,12 @@ namespace CustomerDatabaseLookup.Src
         public Customer ActiveCustomer { get; private set; }
 
         private const int TEST_CASE_AMT = 4;
+        private OrderFilter Filter;
 
         public MainWindowHandle( MainWindow owner )
         {
             Owner = owner;
+            Filter = new OrderFilter();
         }
 
         /// <summary>
@@ -40,10 +42,8 @@ namespace CustomerDatabaseLookup.Src
                     new Order(i, "Plastic straws", DateTime.Now.AddMinutes(i + 5), (float)RandomNumber(), (i % 2 == 0) ? OrderStatus.Processing : OrderStatus.Complete)
                 );
             }
-            WriteToScreen(ActiveCustomer);
-
-            Owner.dgv_CustomerOrderHistories.DataSource = ActiveCustomer.OrderHistory;
-            Owner.dgv_CustomerOrderPriceIncress.DataSource = OrderFilter.SortPricesIncresse(ActiveCustomer.OrderHistory);
+            WriteToScreen();
+            WriteDataGridViews();
 
         }
 
@@ -62,21 +62,37 @@ namespace CustomerDatabaseLookup.Src
         /// </summary>
         public void CustomerEditorUpdater( Customer changes )
         {
-            throw new Exception("TBD");
+            changes.SetOrderHistory(ActiveCustomer.OrderHistory);
+            ActiveCustomer = changes;
+            WriteToScreen();
+            WriteDataGridViews();
         }
 
 
         /// <summary>
         /// Takes in a customer, and writes their data to the screen.
         /// </summary>
-        /// <param name="customerToWrite"> The customer to be writen to the screen </param>
-        private void WriteToScreen(Customer customerToWrite)
+        private void WriteToScreen()
         {
-            Owner.nameHolderLabel.Text = customerToWrite.FullName;
-            Owner.phoneNumberHolderLabel.Text = $"{customerToWrite.PhoneNumber}";
-            Owner.descriptionHolderLabel.Text = customerToWrite.Description;
+            Owner.nameHolderLabel.Text = ActiveCustomer.FullName;
+            Owner.phoneNumberHolderLabel.Text = $"{ActiveCustomer.PhoneNumber}";
+            Owner.descriptionHolderLabel.Text = ActiveCustomer.Description;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private void WriteDataGridViews()
+        {
+            Owner.dgv_CustomerOrderHistories.DataSource = ActiveCustomer.OrderHistory;
+            Owner.dgv_CustomerOrderPriceIncress.DataSource = Filter.SortPricesIncresse(ActiveCustomer.OrderHistory);
+            Owner.dgv_CompletedOrders.DataSource = Filter.GetCompletedOrder(ActiveCustomer.OrderHistory);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         private double RandomNumber()
         {
             Random rng = new Random(DateTime.Now.Millisecond * DateTime.Now.Year);

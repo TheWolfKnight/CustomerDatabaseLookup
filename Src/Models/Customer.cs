@@ -99,6 +99,11 @@ namespace CustomerDatabaseLookup.Src.Models
             return OrderHistory.Count;
         }
 
+        public void SetOrderHistory( List<Order> newOrderHistory )
+        {
+            OrderHistory = newOrderHistory;
+        }
+
 
     }
 }

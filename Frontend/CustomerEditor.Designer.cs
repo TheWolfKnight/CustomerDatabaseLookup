@@ -39,6 +39,7 @@ namespace CustomerDatabaseLookup.Frontend
             this.descriptionInput = new System.Windows.Forms.TextBox();
             this.submitButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.lb_errorLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -46,7 +47,7 @@ namespace CustomerDatabaseLookup.Frontend
             this.nameLabel.AutoSize = true;
             this.nameLabel.Location = new System.Drawing.Point(12, 34);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(50, 16);
+            this.nameLabel.Size = new System.Drawing.Size(53, 17);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name: ";
             // 
@@ -55,7 +56,7 @@ namespace CustomerDatabaseLookup.Frontend
             this.phoneNumberLabel.AutoSize = true;
             this.phoneNumberLabel.Location = new System.Drawing.Point(12, 68);
             this.phoneNumberLabel.Name = "phoneNumberLabel";
-            this.phoneNumberLabel.Size = new System.Drawing.Size(100, 16);
+            this.phoneNumberLabel.Size = new System.Drawing.Size(107, 17);
             this.phoneNumberLabel.TabIndex = 1;
             this.phoneNumberLabel.Text = "Phone Number:";
             // 
@@ -64,7 +65,7 @@ namespace CustomerDatabaseLookup.Frontend
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Location = new System.Drawing.Point(12, 102);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(78, 16);
+            this.descriptionLabel.Size = new System.Drawing.Size(83, 17);
             this.descriptionLabel.TabIndex = 2;
             this.descriptionLabel.Text = "Description:";
             // 
@@ -117,11 +118,23 @@ namespace CustomerDatabaseLookup.Frontend
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // lb_errorLabel
+            // 
+            this.lb_errorLabel.AutoSize = true;
+            this.lb_errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.lb_errorLabel.Location = new System.Drawing.Point(12, 9);
+            this.lb_errorLabel.Name = "lb_errorLabel";
+            this.lb_errorLabel.Size = new System.Drawing.Size(39, 17);
+            this.lb_errorLabel.TabIndex = 9;
+            this.lb_errorLabel.Text = "error";
+            this.lb_errorLabel.Visible = false;
+            // 
             // CustomerEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(372, 345);
+            this.Controls.Add(this.lb_errorLabel);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.descriptionInput);
@@ -150,5 +163,6 @@ namespace CustomerDatabaseLookup.Frontend
         public System.Windows.Forms.TextBox lastNameInput;
         public System.Windows.Forms.TextBox phoneNumberInput;
         public System.Windows.Forms.TextBox descriptionInput;
+        public System.Windows.Forms.Label lb_errorLabel;
     }
 }

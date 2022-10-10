@@ -39,31 +39,35 @@ namespace CustomerDatabaseLookup
             this.editUserDateButton = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.TabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv_CustomerOrderHistories = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderFilterBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderFilterBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dgv_CustomerOrderPriceIncress = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPriceDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dgv_CompletedOrders = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderdDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPriceDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.TabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CustomerOrderHistories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderFilterBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderFilterBindingSource1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CustomerOrderPriceIncress)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CompletedOrders)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -71,7 +75,7 @@ namespace CustomerDatabaseLookup
             this.nameLabel.AutoSize = true;
             this.nameLabel.Location = new System.Drawing.Point(62, 26);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(47, 16);
+            this.nameLabel.Size = new System.Drawing.Size(49, 17);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Name:";
             // 
@@ -80,7 +84,7 @@ namespace CustomerDatabaseLookup
             this.phoneLabel.AutoSize = true;
             this.phoneLabel.Location = new System.Drawing.Point(62, 43);
             this.phoneLabel.Name = "phoneLabel";
-            this.phoneLabel.Size = new System.Drawing.Size(100, 16);
+            this.phoneLabel.Size = new System.Drawing.Size(107, 17);
             this.phoneLabel.TabIndex = 1;
             this.phoneLabel.Text = "Phone Number:";
             // 
@@ -89,7 +93,7 @@ namespace CustomerDatabaseLookup
             this.descriptionLabel.AutoSize = true;
             this.descriptionLabel.Location = new System.Drawing.Point(62, 60);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(78, 16);
+            this.descriptionLabel.Size = new System.Drawing.Size(83, 17);
             this.descriptionLabel.TabIndex = 2;
             this.descriptionLabel.Text = "Description:";
             // 
@@ -98,7 +102,7 @@ namespace CustomerDatabaseLookup
             this.nameHolderLabel.AutoSize = true;
             this.nameHolderLabel.Location = new System.Drawing.Point(187, 26);
             this.nameHolderLabel.Name = "nameHolderLabel";
-            this.nameHolderLabel.Size = new System.Drawing.Size(26, 16);
+            this.nameHolderLabel.Size = new System.Drawing.Size(28, 17);
             this.nameHolderLabel.TabIndex = 3;
             this.nameHolderLabel.Text = "tbd";
             // 
@@ -107,7 +111,7 @@ namespace CustomerDatabaseLookup
             this.phoneNumberHolderLabel.AutoSize = true;
             this.phoneNumberHolderLabel.Location = new System.Drawing.Point(187, 43);
             this.phoneNumberHolderLabel.Name = "phoneNumberHolderLabel";
-            this.phoneNumberHolderLabel.Size = new System.Drawing.Size(26, 16);
+            this.phoneNumberHolderLabel.Size = new System.Drawing.Size(28, 17);
             this.phoneNumberHolderLabel.TabIndex = 4;
             this.phoneNumberHolderLabel.Text = "tbd";
             // 
@@ -116,7 +120,7 @@ namespace CustomerDatabaseLookup
             this.descriptionHolderLabel.AutoSize = true;
             this.descriptionHolderLabel.Location = new System.Drawing.Point(187, 60);
             this.descriptionHolderLabel.Name = "descriptionHolderLabel";
-            this.descriptionHolderLabel.Size = new System.Drawing.Size(26, 16);
+            this.descriptionHolderLabel.Size = new System.Drawing.Size(28, 17);
             this.descriptionHolderLabel.TabIndex = 5;
             this.descriptionHolderLabel.Text = "tbd";
             // 
@@ -152,17 +156,6 @@ namespace CustomerDatabaseLookup
             this.TabPage1.Text = "Order Histories";
             this.TabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dgv_CustomerOrderPriceIncress);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(969, 246);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Order Price Incress";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // dgv_CustomerOrderHistories
             // 
             this.dgv_CustomerOrderHistories.AutoGenerateColumns = false;
@@ -181,15 +174,6 @@ namespace CustomerDatabaseLookup
             this.dgv_CustomerOrderHistories.RowTemplate.Height = 24;
             this.dgv_CustomerOrderHistories.Size = new System.Drawing.Size(963, 240);
             this.dgv_CustomerOrderHistories.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(969, 246);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Completed Orders";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -240,13 +224,16 @@ namespace CustomerDatabaseLookup
             // 
             this.orderBindingSource.DataSource = typeof(CustomerDatabaseLookup.Src.Models.Order);
             // 
-            // orderFilterBindingSource
+            // tabPage2
             // 
-            this.orderFilterBindingSource.DataSource = typeof(CustomerDatabaseLookup.Src.Services.OrderFilter);
-            // 
-            // orderFilterBindingSource1
-            // 
-            this.orderFilterBindingSource1.DataSource = typeof(CustomerDatabaseLookup.Src.Services.OrderFilter);
+            this.tabPage2.Controls.Add(this.dgv_CustomerOrderPriceIncress);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(969, 246);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Order Price Incress";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // dgv_CustomerOrderPriceIncress
             // 
@@ -312,6 +299,80 @@ namespace CustomerDatabaseLookup
             this.statusDataGridViewTextBoxColumn1.ReadOnly = true;
             this.statusDataGridViewTextBoxColumn1.Width = 125;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dgv_CompletedOrders);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(969, 246);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Completed Orders";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // dgv_CompletedOrders
+            // 
+            this.dgv_CompletedOrders.AutoGenerateColumns = false;
+            this.dgv_CompletedOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_CompletedOrders.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn2,
+            this.titleDataGridViewTextBoxColumn2,
+            this.orderdDataGridViewTextBoxColumn2,
+            this.totalPriceDataGridViewTextBoxColumn2,
+            this.statusDataGridViewTextBoxColumn2});
+            this.dgv_CompletedOrders.DataSource = this.orderBindingSource;
+            this.dgv_CompletedOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_CompletedOrders.Location = new System.Drawing.Point(0, 0);
+            this.dgv_CompletedOrders.Name = "dgv_CompletedOrders";
+            this.dgv_CompletedOrders.RowHeadersWidth = 51;
+            this.dgv_CompletedOrders.RowTemplate.Height = 24;
+            this.dgv_CompletedOrders.Size = new System.Drawing.Size(969, 246);
+            this.dgv_CompletedOrders.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn2
+            // 
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // titleDataGridViewTextBoxColumn2
+            // 
+            this.titleDataGridViewTextBoxColumn2.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn2.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.titleDataGridViewTextBoxColumn2.Name = "titleDataGridViewTextBoxColumn2";
+            this.titleDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.titleDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // orderdDataGridViewTextBoxColumn2
+            // 
+            this.orderdDataGridViewTextBoxColumn2.DataPropertyName = "Orderd";
+            this.orderdDataGridViewTextBoxColumn2.HeaderText = "Orderd";
+            this.orderdDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.orderdDataGridViewTextBoxColumn2.Name = "orderdDataGridViewTextBoxColumn2";
+            this.orderdDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.orderdDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // totalPriceDataGridViewTextBoxColumn2
+            // 
+            this.totalPriceDataGridViewTextBoxColumn2.DataPropertyName = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn2.HeaderText = "TotalPrice";
+            this.totalPriceDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.totalPriceDataGridViewTextBoxColumn2.Name = "totalPriceDataGridViewTextBoxColumn2";
+            this.totalPriceDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.totalPriceDataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // statusDataGridViewTextBoxColumn2
+            // 
+            this.statusDataGridViewTextBoxColumn2.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn2.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.statusDataGridViewTextBoxColumn2.Name = "statusDataGridViewTextBoxColumn2";
+            this.statusDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.statusDataGridViewTextBoxColumn2.Width = 125;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -330,12 +391,12 @@ namespace CustomerDatabaseLookup
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.tabControl1.ResumeLayout(false);
             this.TabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CustomerOrderHistories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderFilterBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderFilterBindingSource1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CustomerOrderPriceIncress)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_CompletedOrders)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,8 +411,6 @@ namespace CustomerDatabaseLookup
         public System.Windows.Forms.Label nameHolderLabel;
         public System.Windows.Forms.Label phoneNumberHolderLabel;
         public System.Windows.Forms.Label descriptionHolderLabel;
-        private System.Windows.Forms.BindingSource orderFilterBindingSource;
-        private System.Windows.Forms.BindingSource orderFilterBindingSource1;
         private System.Windows.Forms.BindingSource orderBindingSource;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage TabPage1;
@@ -369,6 +428,12 @@ namespace CustomerDatabaseLookup
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn1;
         public System.Windows.Forms.DataGridView dgv_CustomerOrderPriceIncress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderdDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPriceDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn2;
+        public System.Windows.Forms.DataGridView dgv_CompletedOrders;
     }
 }
 
