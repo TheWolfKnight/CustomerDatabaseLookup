@@ -9,7 +9,7 @@ using CustomerDatabaseLookup.Src.Models;
 
 namespace CustomerDatabaseLookup.Src.Services
 {
-    public  class OrderFilter
+    public class OrderFilter
     {
 
         /// <summary>
@@ -18,12 +18,12 @@ namespace CustomerDatabaseLookup.Src.Services
         /// </summary>
         /// <param name="AllOrderHistories"> The customers orders that will be sorted </param>
         /// <returns> A list of orders </returns>
-        public List<OrderHistories> GetRecent3Orders(List<OrderHistories> AllOrderHistories)
+        public List<Order> GetRecent3Orders(List<Order> AllOrderHistories)
         {
-            var SortedOrderList = AllOrderHistories.OrderBy(OH => OH.Orderdate);
-            var result = SortedOrderList.Take(3);
+            IEnumerable<Order> SortedOrderList = AllOrderHistories.OrderByDescending(OH => OH.Orderdate);
+            List<Order> result = SortedOrderList.Take(3).ToList();
 
-            return result.ToList(); 
+            return result;
             
         }
 
@@ -33,23 +33,19 @@ namespace CustomerDatabaseLookup.Src.Services
         /// </summary>
         /// <param name="AllOrderHistories"> The customers orders that will be sorted </param>
         /// <returns> A list of orders </returns>
-        public List<OrderHistories> GetCompletedOrder(List<OrderHistories> AllOrderHistories)
+        public List<Order> GetCompletedOrder(List<Order> AllOrderHistories)
         {
-            var filteredList = AllOrderHistories.Where(OH => OH.OrderStatus == 2);
-
-            return filteredList.ToList();
-
-
-           
+            List<Order> result = AllOrderHistories.Where(OH => OH.Status == OrderStatus.Complete).ToList();
+            return result;
         }
 
         /// <summary>
         /// Sortes the orders by incressing price
         /// </summary>
         /// <param name="orders"> The customers orders that will be sorted </param>
-        public static List<OrderHistories> SortPricesIncresse(List<OrderHistories> orders)
+        public List<Order> SortPricesIncresse(List<Order> orders)
         {
-            List<OrderHistories> result = orders.OrderBy(order => order.TotalPrice).ToList();
+            List<Order> result = orders.OrderBy(order => order.TotalPrice).ToList();
             return result;
         }
 

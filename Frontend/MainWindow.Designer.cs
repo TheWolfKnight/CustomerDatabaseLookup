@@ -238,7 +238,7 @@ namespace CustomerDatabaseLookup
             // 
             // orderBindingSource
             // 
-            this.orderBindingSource.DataSource = typeof(CustomerDatabaseLookup.Src.Models.OrderHistories);
+            this.orderBindingSource.DataSource = typeof(CustomerDatabaseLookup.Src.Models.Order);
             // 
             // orderFilterBindingSource
             // 

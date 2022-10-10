@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomerDatabaseLookup.Src.Models
 {
-    public class OrderHistories
+    public class Order
     {
 
         public int Id { get; private set; }
@@ -24,7 +24,7 @@ namespace CustomerDatabaseLookup.Src.Models
         /// <param name="orderd"> The time the order was placed </param>
         /// <param name="totalPrice"> The total price of the order </param>
         /// <param name="status"> The status of the order. DEFAULT: OrderStatus.Processing </param>
-        public OrderHistories( int id, string title, DateTime orderd, float totalPrice, OrderStatus status = OrderStatus.)
+        public Order( int id, string title, DateTime orderd, float totalPrice, OrderStatus status = OrderStatus.Processing)
         {
             Id = id;
             Title = title;
