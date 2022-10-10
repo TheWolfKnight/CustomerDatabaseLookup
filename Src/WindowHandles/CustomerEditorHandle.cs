@@ -15,7 +15,7 @@ namespace CustomerDatabaseLookup.Src.WindowHandles
 
         public CustomerEditor Owner { get; private set; }
 
-        private ErrorLoggin Log = new ErrorLoggin();
+        private ErrorLogging Log = new ErrorLogging();
 
         public CustomerEditorHandle( CustomerEditor owner)
         {

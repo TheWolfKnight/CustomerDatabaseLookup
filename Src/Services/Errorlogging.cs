@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomerDatabaseLookup.Src.Services
 {
-    public class ErrorLoggin
+    public class ErrorLogging
     {
 
         public void WriteErrorLog( string message )
