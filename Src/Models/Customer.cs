@@ -13,7 +13,7 @@ namespace CustomerDatabaseLookup.Src.Models
         public string FullName { get; private set; }
         public string Description { get; private set; }
         public int PhoneNumber { get; private set; }
-        public List<Order> OrderHistory { get; private set; }
+        public List<Models.OrderHistories> OrderHistory { get; private set; }
 
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace CustomerDatabaseLookup.Src.Models
             FullName = $"{firstName} {lastName}";
             Description = description;
             PhoneNumber = phoneNumber;
-            OrderHistory = new List<Order>();
+            OrderHistory = new List<OrderHistories>();
         }
 
 
@@ -48,7 +48,7 @@ namespace CustomerDatabaseLookup.Src.Models
             LastName = h[1];
             Description = description;
             PhoneNumber = phoneNumebr;
-            OrderHistory = new List<Order>();
+            OrderHistory = new List<OrderHistories>();
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace CustomerDatabaseLookup.Src.Models
         /// Adds an Order instance to the customer instance
         /// </summary>
         /// <param name="order"> The order that the customer has placed </param>
-        public void PlaceOrder( Order order )
+        public void PlaceOrder( OrderHistories order )
         {
             OrderHistory.Add(order);
         }

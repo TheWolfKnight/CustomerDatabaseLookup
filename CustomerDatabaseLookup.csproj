@@ -63,7 +63,7 @@
     <Compile Include="Src\WindowHandles\CustomerEditorHandle.cs" />
     <Compile Include="Src\WindowHandles\MainWindowHandle.cs" />
     <Compile Include="Src\Models\Customer.cs" />
-    <Compile Include="Src\Models\Order.cs" />
+    <Compile Include="Src\Models\OrderHistories.cs" />
     <Compile Include="Src\Services\OrderFilter.cs" />
     <EmbeddedResource Include="Frontend\CustomerEditor.resx">
       <DependentUpon>CustomerEditor.cs</DependentUpon>

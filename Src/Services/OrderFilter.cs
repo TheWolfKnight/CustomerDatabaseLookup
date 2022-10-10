@@ -9,41 +9,47 @@ using CustomerDatabaseLookup.Src.Models;
 
 namespace CustomerDatabaseLookup.Src.Services
 {
-    public static class OrderFilter
+    public  class OrderFilter
     {
 
         /// <summary>
         /// Sorts the given list of orders by the orders time of the orders Orderd field.
         /// The sort is limited by the amt variable, and will by default show the 3 latest orders
         /// </summary>
-        /// <param name="orders"> The customers orders that will be sorted </param>
-        /// <param name="amt"> The amount of orders that are returnd by the function </param>
+        /// <param name="AllOrderHistories"> The customers orders that will be sorted </param>
         /// <returns> A list of orders </returns>
-        public static List<Order> GetRecentOrders(List<Order> orders, int amt = 3)
+        public List<OrderHistories> GetRecent3Orders(List<OrderHistories> AllOrderHistories)
         {
-            List<Order> result = orders.OrderBy(order => order.Orderd).Reverse().ToList();
-            return result.GetRange(0, amt);
+            var SortedOrderList = AllOrderHistories.OrderBy(OH => OH.Orderdate);
+            var result = SortedOrderList.Take(3);
+
+            return result.ToList(); 
+            
         }
 
 
         /// <summary>
         /// Sorts the orders by where or not they are completed, then returns the completed orders
         /// </summary>
-        /// <param name="orders"> The customers orders that will be sorted </param>
+        /// <param name="AllOrderHistories"> The customers orders that will be sorted </param>
         /// <returns> A list of orders </returns>
-        public static List<Order> GetCompletedOrder(List<Order> orders)
+        public List<OrderHistories> GetCompletedOrder(List<OrderHistories> AllOrderHistories)
         {
-            List<Order> result = orders.Where(order => order.Status is OrderStatus.Complete).ToList();
-            return result;
+            var filteredList = AllOrderHistories.Where(OH => OH.OrderStatus == 2);
+
+            return filteredList.ToList();
+
+
+           
         }
 
         /// <summary>
         /// Sortes the orders by incressing price
         /// </summary>
         /// <param name="orders"> The customers orders that will be sorted </param>
-        public static List<Order> SortPricesIncresse(List<Order> orders)
+        public static List<OrderHistories> SortPricesIncresse(List<OrderHistories> orders)
         {
-            List<Order> result = orders.OrderBy(order => order.TotalPrice).ToList();
+            List<OrderHistories> result = orders.OrderBy(order => order.TotalPrice).ToList();
             return result;
         }
 

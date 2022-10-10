@@ -37,7 +37,7 @@ namespace CustomerDatabaseLookup.Src
             for ( int i = 0; i < TEST_CASE_AMT; i++ )
             {
                 ActiveCustomer.PlaceOrder(
-                    new Order(i, "Plastic straws", DateTime.Now.AddMinutes(i + 5), (float)RandomNumber(), (i % 2 == 0) ? OrderStatus.Processing : OrderStatus.Complete)
+                    new OrderHistories(i, "Plastic straws", DateTime.Now.AddMinutes(i + 5), (float)RandomNumber(), (i % 2 == 0) ? OrderStatus.Processing : OrderStatus.Complete)
                 );
             }
             WriteToScreen(ActiveCustomer);

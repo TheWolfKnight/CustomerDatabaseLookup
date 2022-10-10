@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace CustomerDatabaseLookup.Src.Models
 {
-    public class Order
+    public class OrderHistories
     {
 
         public int Id { get; private set; }
         public string Title { get; private set; }
-        public DateTime Orderd { get; private set;  }
+        public DateTime Orderdate { get; private set;  }
         public float TotalPrice { get; private set; }
         public OrderStatus Status { get; private set; }
+      
 
         /// <summary>
         /// Creates a new Order instance, this tells the program the different thing that has been bought by different customers.
@@ -23,11 +24,11 @@ namespace CustomerDatabaseLookup.Src.Models
         /// <param name="orderd"> The time the order was placed </param>
         /// <param name="totalPrice"> The total price of the order </param>
         /// <param name="status"> The status of the order. DEFAULT: OrderStatus.Processing </param>
-        public Order( int id, string title, DateTime orderd, float totalPrice, OrderStatus status=OrderStatus.Processing )
+        public OrderHistories( int id, string title, DateTime orderd, float totalPrice, OrderStatus status = OrderStatus.)
         {
             Id = id;
             Title = title;
-            Orderd = orderd;
+            Orderdate = orderd;
             TotalPrice = totalPrice;
             Status = status;
         }

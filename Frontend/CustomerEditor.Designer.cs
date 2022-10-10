@@ -1,4 +1,5 @@
 ﻿
+
 namespace CustomerDatabaseLookup.Frontend
 {
     partial class CustomerEditor
