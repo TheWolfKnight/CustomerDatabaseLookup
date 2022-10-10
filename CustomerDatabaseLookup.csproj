@@ -90,6 +90,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\DataSources\CustomerDatabaseLookup.Src.Models.Order.datasource" />
     <None Include="Properties\DataSources\CustomerDatabaseLookup.Src.OrderFilter.datasource" />

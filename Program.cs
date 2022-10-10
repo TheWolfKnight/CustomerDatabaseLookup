@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CustomerDatabaseLookup.Frontend;
+
 namespace CustomerDatabaseLookup
 {
     static class Program
@@ -16,7 +18,7 @@ namespace CustomerDatabaseLookup
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindow());
+            Application.Run(new LoginWindow());
         }
     }
 }

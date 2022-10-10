@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lb1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
             this.lb_2 = new System.Windows.Forms.Label();
             this.tb_UserName = new System.Windows.Forms.TextBox();
             this.tb_Password = new System.Windows.Forms.TextBox();
@@ -44,14 +44,15 @@
             this.lb1.TabIndex = 0;
             this.lb1.Text = "User Name:";
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(51, 124);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Log In";
-            this.button1.UseVisualStyleBackColor = true;
+            this.loginButton.Location = new System.Drawing.Point(51, 124);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(75, 35);
+            this.loginButton.TabIndex = 1;
+            this.loginButton.Text = "Log In";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // lb_2
             // 
@@ -84,10 +85,11 @@
             this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_UserName);
             this.Controls.Add(this.lb_2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.lb1);
             this.Name = "LoginWindow";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.LoginWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,9 +98,9 @@
         #endregion
 
         public System.Windows.Forms.Label lb1;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label lb_2;
         public System.Windows.Forms.TextBox tb_UserName;
         public System.Windows.Forms.TextBox tb_Password;
+        public System.Windows.Forms.Button loginButton;
     }
 }
