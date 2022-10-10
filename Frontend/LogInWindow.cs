@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CustomerDatabaseLookup.Frontend
 {
-    public partial class LogInWindow : Form
+    public partial class LoginWindow : Form
     {
-        public LogInWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }
