@@ -10,10 +10,10 @@ namespace CustomerDatabaseLookup.Src.Models
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
-        public string FullName { get; private set; }
+        public string FullName { get { return $"{FirstName} {LastName}"; } private set { FullName = value; } }
         public string Description { get; private set; }
         public int PhoneNumber { get; private set; }
-        public List<Models.Order> OrderHistory { get; private set; }
+        public List<Order> OrderHistory { get; private set; }
 
 
         /// <summary>
@@ -42,7 +42,6 @@ namespace CustomerDatabaseLookup.Src.Models
         /// <param name="phoneNumebr"> The phone number of the customer </param>
         public Customer(string fullName, string description, int phoneNumebr)
         {
-            FullName = fullName;
             string[] h = fullName.Split(' ');
             FirstName = h[0];
             LastName = h[1];
@@ -60,7 +59,6 @@ namespace CustomerDatabaseLookup.Src.Models
             string[] h = fullName.Split(' ');
             FirstName = h[0];
             LastName = h[1];
-            FullName = fullName;
         }
 
         /// <summary>

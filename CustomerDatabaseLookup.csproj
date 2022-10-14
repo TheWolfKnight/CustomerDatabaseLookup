@@ -66,6 +66,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Src\Repositories\CustomerRepository.cs" />
     <Compile Include="Src\Services\ErrorLogging.cs" />
     <Compile Include="Src\WindowHandles\CustomerEditorHandle.cs" />
     <Compile Include="Src\WindowHandles\LoginWindowHandle.cs" />
